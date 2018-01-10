@@ -1,6 +1,9 @@
 class Party < ApplicationRecord
   # Direct associations
 
+  has_many   :conversations,
+             :dependent => :destroy
+
   has_many   :pnms,
              :dependent => :destroy
 
