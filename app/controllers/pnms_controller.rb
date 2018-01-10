@@ -6,6 +6,7 @@ class PnmsController < ApplicationController
   end
 
   def show
+    @conversation = Conversation.new
     @pnm = Pnm.find(params[:id])
 
     render("pnms/show.html.erb")

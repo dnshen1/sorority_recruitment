@@ -48,6 +48,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_rotation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for bump_group_id -->
+      <div class="form-group">
+        <label for="bump_group_id" class="control-label">
+          Bump group
+        </label>
+
+        <%= select_tag(:bump_group_id, options_from_collection_for_select(BumpGroup.all, :id, :letter), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for party_id -->
+      <input type="hidden" name="party_id" value="<%= @party.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Rotation
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -79,6 +102,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_pnm" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for hometown -->
+      <div class="form-group">
+        <label for="hometown" class="control-label">
+          Hometown
+        </label>
+
+        <input type="text" id="hometown" name="hometown" placeholder="Hometown" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for party_id -->
+      <input type="hidden" name="party_id" value="<%= @party.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Pnm
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -110,6 +174,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_conversation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for party_id -->
+      <input type="hidden" name="party_id" value="<%= @party.id %>">
+
+      <!-- Label and input for member_id -->
+      <div class="form-group">
+        <label for="member_id" class="control-label">
+          Member
+        </label>
+
+        <%= select_tag(:member_id, options_from_collection_for_select(Member.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for pnm_id -->
+      <div class="form-group">
+        <label for="pnm_id" class="control-label">
+          Pnm
+        </label>
+
+        <%= select_tag(:pnm_id, options_from_collection_for_select(Pnm.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Conversation
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

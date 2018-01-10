@@ -6,6 +6,9 @@ class PartiesController < ApplicationController
   end
 
   def show
+    @conversation = Conversation.new
+    @pnm = Pnm.new
+    @rotation = Rotation.new
     @party = Party.find(params[:id])
 
     render("parties/show.html.erb")

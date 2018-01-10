@@ -51,6 +51,10 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        
+      </li>
     </ul>
   </div>
 </div>
@@ -82,6 +86,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_rotation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for bump_group_id -->
+      <div class="form-group">
+        <label for="bump_group_id" class="control-label">
+          Bump group
+        </label>
+
+        <%= select_tag(:bump_group_id, options_from_collection_for_select(BumpGroup.all, :id, :letter), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for party_id -->
+      <div class="form-group">
+        <label for="party_id" class="control-label">
+          Party
+        </label>
+
+        <%= select_tag(:party_id, options_from_collection_for_select(Party.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Rotation
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

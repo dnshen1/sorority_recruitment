@@ -6,6 +6,8 @@ class BumpGroupsController < ApplicationController
   end
 
   def show
+    @rotation = Rotation.new
+    @member = Member.new
     @bump_group = BumpGroup.find(params[:id])
 
     render("bump_groups/show.html.erb")
