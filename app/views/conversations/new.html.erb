@@ -42,7 +42,7 @@
           Pnm
         </label>
 
-        <input type="text" id="pnm_id" name="pnm_id" placeholder="Pnm" class="form-control" value="<%= @conversation.pnm_id %>">
+        <%= select_tag(:pnm_id, options_from_collection_for_select(Pnm.all, :id, :name, @conversation.pnm_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
