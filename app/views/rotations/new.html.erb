@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @rotation.errors.any? %>
+  <% @rotation.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Rotation</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_rotation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for bump_group_id -->
+      <div class="form-group">
+        <label for="bump_group_id" class="control-label">
+          Bump group
+        </label>
+
+        <input type="text" id="bump_group_id" name="bump_group_id" placeholder="Bump group" class="form-control" value="<%= @rotation.bump_group_id %>">
+      </div>
+
+      <!-- Label and input for party_id -->
+      <div class="form-group">
+        <label for="party_id" class="control-label">
+          Party
+        </label>
+
+        <input type="text" id="party_id" name="party_id" placeholder="Party" class="form-control" value="<%= @rotation.party_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Rotation
+      </button>
+      or
+      <a href="/rotations">Cancel</a>
+    </form>
+  </div>
+</div>

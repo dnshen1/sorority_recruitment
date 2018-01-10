@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Rotations
+    <a href="/rotations/new" class="btn btn-lg btn-success">New Rotation</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Bump group</th>
+        <th>Party</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @rotations.each do |rotation| %>
+      <tr>
+        <td><%= rotation.bump_group_id %></td>
+        <td><%= rotation.party_id %></td>
+        <td>
+          <a href="/rotations/<%= rotation.id %>" class="btn btn-primary">Show</a>
+          <a href="/rotations/<%= rotation.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_rotation/<%= rotation.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

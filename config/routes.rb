@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Rotation resource:
+  # CREATE
+  get "/rotations/new", :controller => "rotations", :action => "new"
+  post "/create_rotation", :controller => "rotations", :action => "create"
+
+  # READ
+  get "/rotations", :controller => "rotations", :action => "index"
+  get "/rotations/:id", :controller => "rotations", :action => "show"
+
+  # UPDATE
+  get "/rotations/:id/edit", :controller => "rotations", :action => "edit"
+  post "/update_rotation/:id", :controller => "rotations", :action => "update"
+
+  # DELETE
+  get "/delete_rotation/:id", :controller => "rotations", :action => "destroy"
+  #------------------------------
+
   # Routes for the Party resource:
   # CREATE
   get "/parties/new", :controller => "parties", :action => "new"
