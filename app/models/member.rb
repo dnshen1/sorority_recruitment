@@ -8,6 +8,10 @@ class Member < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :ppms,
+             :through => :conversations,
+             :source => :ppm
+
   # Validations
 
   # Include default devise modules. Others available are:

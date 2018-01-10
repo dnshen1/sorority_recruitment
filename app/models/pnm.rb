@@ -8,6 +8,10 @@ class Pnm < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :members,
+             :through => :conversations,
+             :source => :member
+
   # Validations
 
 end
