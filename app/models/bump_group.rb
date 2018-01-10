@@ -9,6 +9,10 @@ class BumpGroup < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :conversations,
+             :through => :members,
+             :source => :conversations
+
   has_many   :parties,
              :through => :rotations,
              :source => :party

@@ -11,6 +11,10 @@ class Conversation < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :bump_group,
+             :through => :member,
+             :source => :bump_group
+
   # Validations
 
 end
