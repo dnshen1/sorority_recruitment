@@ -22,7 +22,7 @@
       <% @members.each do |member| %>
       <tr>
         <td><%= member.name %></td>
-        <td><%= member.bump_group_id %></td>
+        <td><%= member.bump_group.letter %></td>
         <td><%= member.group_number %></td>
         <td><%= member.email %></td>
         <td><%= member.password %></td>
