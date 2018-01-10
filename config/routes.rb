@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :members
+  # Routes for the Member resource:
+  # READ
+  get "/members", :controller => "members", :action => "index"
+  get "/members/:id", :controller => "members", :action => "show"
+
+
   # Routes for the Bump_group resource:
   # CREATE
   get "/bump_groups/new", :controller => "bump_groups", :action => "new"

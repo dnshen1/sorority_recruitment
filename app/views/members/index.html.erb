@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Members
+    <a href="/members/new" class="btn btn-lg btn-success">New Member</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Bump group</th>
+        <th>Group number</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Hometown</th>
+        <th>Year</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @members.each do |member| %>
+      <tr>
+        <td><%= member.name %></td>
+        <td><%= member.bump_group_id %></td>
+        <td><%= member.group_number %></td>
+        <td><%= member.email %></td>
+        <td><%= member.password %></td>
+        <td><%= member.hometown %></td>
+        <td><%= member.year %></td>
+        <td>
+          <a href="/members/<%= member.id %>" class="btn btn-primary">Show</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
