@@ -24,7 +24,7 @@
           Party
         </label>
 
-        <input type="text" id="party_id" name="party_id" placeholder="Party" class="form-control" value="<%= @conversation.party_id %>">
+        <%= select_tag(:party_id, options_from_collection_for_select(Party.all, :id, :created_at, @conversation.party_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for member_id -->
