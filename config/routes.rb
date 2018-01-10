@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "bump_groups#index"
   # Routes for the Conversation resource:
   # CREATE
   get "/conversations/new", :controller => "conversations", :action => "new"
