@@ -18,7 +18,7 @@
       <% @conversations.each do |conversation| %>
       <tr>
         <td><%= conversation.party.created_at %></td>
-        <td><%= conversation.member_id %></td>
+        <td><%= conversation.member.created_at %></td>
         <td><%= conversation.pnm_id %></td>
         <td>
           <a href="/conversations/<%= conversation.id %>" class="btn btn-primary">Show</a>
