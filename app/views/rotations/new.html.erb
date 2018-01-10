@@ -24,7 +24,7 @@
           Bump group
         </label>
 
-        <input type="text" id="bump_group_id" name="bump_group_id" placeholder="Bump group" class="form-control" value="<%= @rotation.bump_group_id %>">
+        <%= select_tag(:bump_group_id, options_from_collection_for_select(BumpGroup.all, :id, :letter, @rotation.bump_group_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for party_id -->
