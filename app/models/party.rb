@@ -12,6 +12,10 @@ class Party < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bump_groups,
+             :through => :rotations,
+             :source => :bump_group
+
   # Validations
 
 end
