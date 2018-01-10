@@ -1,6 +1,7 @@
 class BumpGroupsController < ApplicationController
   def index
-    @bump_groups = BumpGroup.page(params[:page]).per(10)
+    @q = BumpGroup.ransack(params[:q])
+    @bump_groups = @q.result(:distinct => true).includes(:members, :rotations, :parties, :conversations).page(params[:page]).per(10)
 
     render("bump_groups/index.html.erb")
   end

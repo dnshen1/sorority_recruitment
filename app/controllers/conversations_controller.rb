@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.page(params[:page]).per(10)
+    @q = Conversation.ransack(params[:q])
+    @conversations = @q.result(:distinct => true).includes(:member, :party, :ppm, :bump_group).page(params[:page]).per(10)
 
     render("conversations/index.html.erb")
   end

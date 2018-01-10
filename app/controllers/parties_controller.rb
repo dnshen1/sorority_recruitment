@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   def index
-    @parties = Party.page(params[:page]).per(10)
+    @q = Party.ransack(params[:q])
+    @parties = @q.result(:distinct => true).includes(:rotations, :pnms, :conversations, :bump_groups).page(params[:page]).per(10)
 
     render("parties/index.html.erb")
   end

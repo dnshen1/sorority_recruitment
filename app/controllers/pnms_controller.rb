@@ -1,6 +1,7 @@
 class PnmsController < ApplicationController
   def index
-    @pnms = Pnm.page(params[:page]).per(10)
+    @q = Pnm.ransack(params[:q])
+    @pnms = @q.result(:distinct => true).includes(:party, :conversations, :members).page(params[:page]).per(10)
 
     render("pnms/index.html.erb")
   end

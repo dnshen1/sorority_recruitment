@@ -1,6 +1,7 @@
 class RotationsController < ApplicationController
   def index
-    @rotations = Rotation.page(params[:page]).per(10)
+    @q = Rotation.ransack(params[:q])
+    @rotations = @q.result(:distinct => true).includes(:bump_group, :party).page(params[:page]).per(10)
 
     render("rotations/index.html.erb")
   end
