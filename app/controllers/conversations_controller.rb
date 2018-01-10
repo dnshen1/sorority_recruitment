@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.all
+    @conversations = Conversation.page(params[:page]).per(10)
 
     render("conversations/index.html.erb")
   end

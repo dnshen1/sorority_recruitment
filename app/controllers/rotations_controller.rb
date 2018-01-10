@@ -1,6 +1,6 @@
 class RotationsController < ApplicationController
   def index
-    @rotations = Rotation.all
+    @rotations = Rotation.page(params[:page]).per(10)
 
     render("rotations/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class BumpGroupsController < ApplicationController
   def index
-    @bump_groups = BumpGroup.all
+    @bump_groups = BumpGroup.page(params[:page]).per(10)
 
     render("bump_groups/index.html.erb")
   end

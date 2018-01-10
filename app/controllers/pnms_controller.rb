@@ -1,6 +1,6 @@
 class PnmsController < ApplicationController
   def index
-    @pnms = Pnm.all
+    @pnms = Pnm.page(params[:page]).per(10)
 
     render("pnms/index.html.erb")
   end

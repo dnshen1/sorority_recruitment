@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
   def index
-    @parties = Party.all
+    @parties = Party.page(params[:page]).per(10)
 
     render("parties/index.html.erb")
   end
