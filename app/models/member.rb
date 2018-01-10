@@ -1,6 +1,9 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  has_many   :conversations,
+             :dependent => :destroy
+
   belongs_to :bump_group
 
   # Indirect associations
