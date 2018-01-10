@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Pnm resource:
+  # CREATE
+  get "/pnms/new", :controller => "pnms", :action => "new"
+  post "/create_pnm", :controller => "pnms", :action => "create"
+
+  # READ
+  get "/pnms", :controller => "pnms", :action => "index"
+  get "/pnms/:id", :controller => "pnms", :action => "show"
+
+  # UPDATE
+  get "/pnms/:id/edit", :controller => "pnms", :action => "edit"
+  post "/update_pnm/:id", :controller => "pnms", :action => "update"
+
+  # DELETE
+  get "/delete_pnm/:id", :controller => "pnms", :action => "destroy"
+  #------------------------------
+
   # Routes for the Rotation resource:
   # CREATE
   get "/rotations/new", :controller => "rotations", :action => "new"

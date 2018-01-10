@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Pnm #<%= @pnm.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @pnm.name %></dd>
+
+      <dt>Hometown</dt>
+      <dd><%= @pnm.hometown %></dd>
+
+      <dt>Year</dt>
+      <dd><%= @pnm.year %></dd>
+
+      <dt>Party</dt>
+      <dd><%= @pnm.party_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/pnms" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/pnms/<%= @pnm.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_pnm/<%= @pnm.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

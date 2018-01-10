@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Pnms
+    <a href="/pnms/new" class="btn btn-lg btn-success">New Pnm</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Hometown</th>
+        <th>Year</th>
+        <th>Party</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @pnms.each do |pnm| %>
+      <tr>
+        <td><%= pnm.name %></td>
+        <td><%= pnm.hometown %></td>
+        <td><%= pnm.year %></td>
+        <td><%= pnm.party_id %></td>
+        <td>
+          <a href="/pnms/<%= pnm.id %>" class="btn btn-primary">Show</a>
+          <a href="/pnms/<%= pnm.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_pnm/<%= pnm.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
