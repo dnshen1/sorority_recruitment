@@ -17,9 +17,27 @@
 
       <% @conversations.each do |conversation| %>
       <tr>
-        <td><%= conversation.party.created_at %></td>
-        <td><%= conversation.member.created_at %></td>
-        <td><%= conversation.ppm.name %></td>
+        <td>
+          <% if conversation.party.present? %>
+            <a href="/parties/<%= conversation.party.id %>">
+              <%= conversation.party.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if conversation.member.present? %>
+            <a href="/members/<%= conversation.member.id %>">
+              <%= conversation.member.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if conversation.ppm.present? %>
+            <a href="/pnms/<%= conversation.ppm.id %>">
+              <%= conversation.ppm.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/conversations/<%= conversation.id %>" class="btn btn-primary">Show</a>
           <a href="/conversations/<%= conversation.id %>/edit" class="btn btn-warning">Edit</a>

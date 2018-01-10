@@ -9,7 +9,13 @@
       <dd><%= @member.name %></dd>
 
       <dt>Bump group</dt>
-      <dd><%= @member.bump_group_id %></dd>
+      <dd>
+        <% if @member.bump_group.present? %>
+          <a href="/bump_groups/<%= @member.bump_group_id %>">
+            <%= @member.bump_group.letter %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Group number</dt>
       <dd><%= @member.group_number %></dd>

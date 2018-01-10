@@ -15,7 +15,13 @@
       <dd><%= @pnm.year %></dd>
 
       <dt>Party</dt>
-      <dd><%= @pnm.party_id %></dd>
+      <dd>
+        <% if @pnm.party.present? %>
+          <a href="/parties/<%= @pnm.party_id %>">
+            <%= @pnm.party.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

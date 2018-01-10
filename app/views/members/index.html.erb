@@ -22,7 +22,13 @@
       <% @members.each do |member| %>
       <tr>
         <td><%= member.name %></td>
-        <td><%= member.bump_group.letter %></td>
+        <td>
+          <% if member.bump_group.present? %>
+            <a href="/bump_groups/<%= member.bump_group.id %>">
+              <%= member.bump_group.letter %>
+            </a>
+          <% end %>
+        </td>
         <td><%= member.group_number %></td>
         <td><%= member.email %></td>
         <td><%= member.password %></td>

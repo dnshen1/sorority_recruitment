@@ -6,13 +6,31 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Party</dt>
-      <dd><%= @conversation.party_id %></dd>
+      <dd>
+        <% if @conversation.party.present? %>
+          <a href="/parties/<%= @conversation.party_id %>">
+            <%= @conversation.party.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Member</dt>
-      <dd><%= @conversation.member_id %></dd>
+      <dd>
+        <% if @conversation.member.present? %>
+          <a href="/members/<%= @conversation.member_id %>">
+            <%= @conversation.member.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Pnm</dt>
-      <dd><%= @conversation.pnm_id %></dd>
+      <dd>
+        <% if @conversation.ppm.present? %>
+          <a href="/pnms/<%= @conversation.pnm_id %>">
+            <%= @conversation.ppm.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

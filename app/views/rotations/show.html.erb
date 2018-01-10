@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Bump group</dt>
-      <dd><%= @rotation.bump_group_id %></dd>
+      <dd>
+        <% if @rotation.bump_group.present? %>
+          <a href="/bump_groups/<%= @rotation.bump_group_id %>">
+            <%= @rotation.bump_group.letter %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Party</dt>
-      <dd><%= @rotation.party_id %></dd>
+      <dd>
+        <% if @rotation.party.present? %>
+          <a href="/parties/<%= @rotation.party_id %>">
+            <%= @rotation.party.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
