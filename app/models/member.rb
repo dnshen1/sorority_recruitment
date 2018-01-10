@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  belongs_to :bump_group
+
   # Indirect associations
 
   # Validations
