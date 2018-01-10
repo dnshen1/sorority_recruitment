@@ -17,7 +17,7 @@
 
       <% @conversations.each do |conversation| %>
       <tr>
-        <td><%= conversation.party_id %></td>
+        <td><%= conversation.party.created_at %></td>
         <td><%= conversation.member_id %></td>
         <td><%= conversation.pnm_id %></td>
         <td>
