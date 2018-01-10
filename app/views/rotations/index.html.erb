@@ -17,7 +17,7 @@
       <% @rotations.each do |rotation| %>
       <tr>
         <td><%= rotation.bump_group.letter %></td>
-        <td><%= rotation.party_id %></td>
+        <td><%= rotation.party.created_at %></td>
         <td>
           <a href="/rotations/<%= rotation.id %>" class="btn btn-primary">Show</a>
           <a href="/rotations/<%= rotation.id %>/edit" class="btn btn-warning">Edit</a>
