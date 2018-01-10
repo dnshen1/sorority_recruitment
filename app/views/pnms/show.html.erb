@@ -32,3 +32,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Pnm has many conversations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Conversations
+      </li>
+
+      <% @pnm.conversations.each do |conversation| %>
+        <li class="list-group-item">
+          <a href="/conversations/<%= conversation.id %>">
+            <%= conversation.party_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/conversations/<%= conversation.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/conversations/<%= conversation.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_conversation/<%= conversation.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Pnm has many members -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Members
+      </li>
+
+      <% @pnm.members.each do |member| %>
+        <li class="list-group-item">
+          <a href="/members/<%= member.id %>">
+            <%= member.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/members/<%= member.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/members/<%= member.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_member/<%= member.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

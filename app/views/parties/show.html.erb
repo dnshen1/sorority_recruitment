@@ -20,3 +20,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Party has many rotations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Rotations
+      </li>
+
+      <% @party.rotations.each do |rotation| %>
+        <li class="list-group-item">
+          <a href="/rotations/<%= rotation.id %>">
+            <%= rotation.bump_group_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/rotations/<%= rotation.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/rotations/<%= rotation.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_rotation/<%= rotation.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Party has many pnms -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Pnms
+      </li>
+
+      <% @party.pnms.each do |pnm| %>
+        <li class="list-group-item">
+          <a href="/pnms/<%= pnm.id %>">
+            <%= pnm.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/pnms/<%= pnm.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/pnms/<%= pnm.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_pnm/<%= pnm.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Party has many conversations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Conversations
+      </li>
+
+      <% @party.conversations.each do |conversation| %>
+        <li class="list-group-item">
+          <a href="/conversations/<%= conversation.id %>">
+            <%= conversation.party_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/conversations/<%= conversation.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/conversations/<%= conversation.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_conversation/<%= conversation.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Party has many bump_groups -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bump Groups
+      </li>
+
+      <% @party.bump_groups.each do |bump_group| %>
+        <li class="list-group-item">
+          <a href="/bump_groups/<%= bump_group.id %>">
+            <%= bump_group.letter %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/bump_groups/<%= bump_group.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/bump_groups/<%= bump_group.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_bump_group/<%= bump_group.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
